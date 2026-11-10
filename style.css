@@ -105,7 +105,7 @@ button:hover {
 /* BOTÓN DE UBICACIÓN */
 .boton-ubicacion {
     position: absolute;
-    top: 80%;
+    top: 81%;
     left: 26%;
     transform: translate(-50%, -50%);
     padding: 9px 18px;
@@ -125,7 +125,7 @@ button:hover {
 /* CONTADOR */
 .contador {
     position: absolute;
-    top: 77%;
+    top: 76.5%;
     left: 74%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -167,19 +167,14 @@ button:hover {
     line-height: 1;
 }
 
-/* ANIMACIÓN */
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 .contenido:not(.oculto) {
     animation: aparecer 1s ease;
+}
+
+.boton-ubicacion:hover {
+    background: #c59a4a;
+    color: #102746;
+    border-color: #102746;
+    transition: 0.3s;
 }
