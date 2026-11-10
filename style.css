@@ -17,7 +17,7 @@
 
 body {
     min-height: 100vh;
-    padding: 30px 15px;
+    padding: 20px;
     background: var(--azul);
     display: flex;
     justify-content: center;
@@ -78,31 +78,96 @@ button:hover {
     display: none !important;
 }
 
-/* CONTENIDO DE LA INVITACIÓN */
+/* CONTENIDO */
 .contenido {
     width: 100%;
     padding: 0;
     margin: auto;
     background: transparent;
-    border: none;
-    outline: none;
-    box-shadow: none;
     text-align: center;
 }
 
-/* IMAGEN COMPLETA DE ARLENNE */
+/* IMAGEN COMPLETA */
+.imagen-con-ubicacion {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+}
+
 .invitacion-completa {
     display: block;
     width: 100%;
-    max-width: 750px;
     height: auto;
     margin: 0 auto;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
 }
 
-/* ANIMACIÓN AL ABRIR */
+/* BOTÓN DE UBICACIÓN */
+.boton-ubicacion {
+    position: absolute;
+    top: 80%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    padding: 9px 18px;
+    background: var(--azul);
+    color: var(--crema);
+    border: 3px double var(--dorado);
+    border-radius: 25px;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(8px, 1.6vw, 12px);
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 3px 8px #0005;
+    z-index: 5;
+}
+
+/* CONTADOR */
+.contador {
+    position: absolute;
+    top: 77%;
+    left: 74%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(2px, 0.5vw, 5px);
+    z-index: 4;
+}
+
+/* CUADROS */
+.contador-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: clamp(27px, 5.3vw, 40px);
+    min-width: 0;
+    padding: 3px 2px;
+    background: var(--azul);
+    border: 2px solid var(--dorado);
+    border-radius: 7px;
+    color: #fff0d1;
+    box-shadow: 0 2px 6px #0004;
+}
+
+/* NÚMEROS */
+.contador-item span {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(10px, 1.8vw, 13px);
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+/* ETIQUETAS */
+.contador-item small {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(5px, 0.9vw, 7px);
+    color: #e9bd69;
+    line-height: 1;
+}
+
+/* ANIMACIÓN */
 @keyframes aparecer {
     from {
         opacity: 0;
@@ -117,156 +182,4 @@ button:hover {
 
 .contenido:not(.oculto) {
     animation: aparecer 1s ease;
-}
-
-/* CONTENEDOR DE LA INVITACIÓN */
-.imagen-con-ubicacion {
-    position: relative;
-    width: 100%;
-    max-width: 750px;
-    margin: auto;
-}
-
-/* BOTÓN DE UBICACIÓN */
-.boton-ubicacion {
-    position: absolute;
-    top: 80%;
-    left: 26%;
-    transform: translateX(-50%);
-    display: inline-block;
-    padding: 9px 18px;
-    background: #102746;
-    color: #f9edda;
-    border: 3px double #c59a4a;
-    border-radius: 25px;
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    font-weight: bold;
-    text-decoration: none;
-    white-space: nowrap;
-    box-shadow: 0 3px 8px #0005;
-    z-index: 5;
-}
-
-.boton-ubicacion:hover {
-    background: #c59a4a;
-    color: #102746;
-    transform: translateX(-50%) scale(1.05);
-}
-
-/* CONTADOR REGRESIVO */
-.contador {
-    position: absolute;
-    top: 77%;
-    left: 74%;
-    transform: translate(-50%, calc(-50% - 7px));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    width: auto;
-    z-index: 4;
-}
-
-/* CUADROS */
-.contador-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    min-width: 40px;
-    padding: 0px 2px;
-    background: #102746;
-    border: 2px solid #c59a4a;
-    border-radius: 7px;
-    color: #fff0d1;
-    box-shadow: 0 2px 6px #0004;
-}
-
-/* NÚMEROS */
-.contador-item span {
-    font-family: 'Cinzel', serif;
-    font-size: 13px;
-    font-weight: bold;
-    line-height: 1.1;
-}
-
-/* ETIQUETAS */
-.contador-item small {
-    font-family: 'Cinzel', serif;
-    font-size: 6px;
-    color: #e9bd69;
-    line-height: 1;
-}
-
-/* AJUSTES PARA CELULARES */
-/* AJUSTES PARA CELULARES */
-@media (max-width: 650px) {
-
-    body {
-        padding: 0;
-        align-items: flex-start;
-    }
-
-    .invitacion {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
-    .portada {
-        width: 100%;
-        height: auto;
-    }
-
-    .contenido {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
-
-    .invitacion-completa {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        margin: 0 auto;
-    }
-
-    button {
-        font-size: 12px;
-        padding: 12px 20px;
-    }
-
-    /* BOTÓN DE UBICACIÓN */
-    .boton-ubicacion {
-        top: 79%;
-        left: 26%;
-        padding: 7px 13px;
-        font-size: 10px;
-        border-width: 2px;
-    }
-
-    /* CONTADOR */
-    .contador {
-        top: 78%;
-        left: 74%;
-        gap: 3px;
-    }
-
-    /* CUADROS DEL CONTADOR */
-    .contador-item {
-        width: 39px;
-        min-width: 39px;
-        padding: 4px 2px;
-    }
-
-    .contador-item span {
-        font-size: 13px;
-    }
-
-    .contador-item small {
-        font-size: 6px;
-    }
 }
