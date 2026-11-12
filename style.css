@@ -1,14 +1,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
 
-/* COLORES */
+/* =================================
+   COLORES
+================================= */
+
 :root {
     --azul: #102746;
     --dorado: #c59a4a;
     --crema: #f9edda;
 }
 
-/* CONFIGURACIÓN GENERAL */
+/* =================================
+   CONFIGURACIÓN GENERAL
+================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +30,10 @@ body {
     align-items: center;
 }
 
-/* CONTENEDOR */
+/* =================================
+   CONTENEDOR PRINCIPAL
+================================= */
+
 .invitacion {
     width: 100%;
     max-width: 750px;
@@ -32,7 +41,10 @@ body {
     position: relative;
 }
 
-/* PORTADA */
+/* =================================
+   PORTADA
+================================= */
+
 .portada-contenedor {
     text-align: center;
 }
@@ -45,7 +57,10 @@ body {
     border-radius: 5px;
 }
 
-/* BOTONES */
+/* =================================
+   BOTONES
+================================= */
+
 button {
     display: block;
     padding: 13px 25px;
@@ -73,12 +88,18 @@ button:hover {
     transform: translateY(-3px);
 }
 
-/* OCULTAR INVITACIÓN */
+/* =================================
+   OCULTAR INVITACIÓN
+================================= */
+
 .oculto {
     display: none !important;
 }
 
-/* CONTENIDO */
+/* =================================
+   CONTENIDO
+================================= */
+
 .contenido {
     width: 100%;
     padding: 0;
@@ -87,7 +108,10 @@ button:hover {
     text-align: center;
 }
 
-/* IMAGEN COMPLETA */
+/* =================================
+   IMAGEN COMPLETA
+================================= */
+
 .imagen-con-ubicacion {
     position: relative;
     width: 100%;
@@ -102,7 +126,10 @@ button:hover {
     margin: 0 auto;
 }
 
-/* BOTÓN DE UBICACIÓN */
+/* =================================
+   BOTÓN DE UBICACIÓN
+================================= */
+
 .boton-ubicacion {
     position: absolute;
     top: 81%;
@@ -122,7 +149,17 @@ button:hover {
     z-index: 5;
 }
 
-/* CONTADOR */
+.boton-ubicacion:hover {
+    background: var(--dorado);
+    color: var(--azul);
+    border-color: var(--azul);
+    transition: 0.3s;
+}
+
+/* =================================
+   CONTADOR REGRESIVO
+================================= */
+
 .contador {
     position: absolute;
     top: 76.5%;
@@ -136,6 +173,7 @@ button:hover {
 }
 
 /* CUADROS */
+
 .contador-item {
     display: flex;
     flex-direction: column;
@@ -152,6 +190,7 @@ button:hover {
 }
 
 /* NÚMEROS */
+
 .contador-item span {
     font-family: 'Cinzel', serif;
     font-size: clamp(10px, 1.8vw, 13px);
@@ -160,6 +199,7 @@ button:hover {
 }
 
 /* ETIQUETAS */
+
 .contador-item small {
     font-family: 'Cinzel', serif;
     font-size: clamp(5px, 0.9vw, 7px);
@@ -167,14 +207,157 @@ button:hover {
     line-height: 1;
 }
 
+/* =================================
+   ANIMACIÓN
+================================= */
 
 .contenido:not(.oculto) {
     animation: aparecer 1s ease;
 }
 
-.boton-ubicacion:hover {
-    background: #c59a4a;
-    color: #102746;
-    border-color: #102746;
-    transition: 0.3s;
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* =================================
+   AJUSTES PARA CELULARES
+================================= */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        padding: 5px;
+        min-height: 100vh;
+        align-items: flex-start;
+    }
+
+    .invitacion {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    /* PORTADA */
+
+    .portada {
+        width: 100%;
+        height: auto;
+    }
+
+    /* CONTENIDO */
+
+    .contenido {
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    /* IMAGEN */
+
+    .imagen-con-ubicacion {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+    }
+
+    .invitacion-completa {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* UBICACIÓN */
+
+    .boton-ubicacion {
+        top: 81%;
+        left: 26%;
+        padding: 6px 9px;
+        font-size: clamp(7px, 2vw, 10px);
+        border-width: 2px;
+    }
+
+    /* CONTADOR */
+
+    .contador {
+        top: 76.5%;
+        left: 74%;
+        gap: 2px;
+    }
+
+    .contador-item {
+        width: clamp(25px, 7vw, 36px);
+        padding: 3px 2px;
+        border-width: 1.5px;
+    }
+
+    .contador-item span {
+        font-size: clamp(9px, 2.5vw, 12px);
+    }
+
+    .contador-item small {
+        font-size: clamp(5px, 1.4vw, 7px);
+    }
+
+    /* BOTÓN CONFIRMAR */
+
+    #botonCerrar {
+        top: -35px;
+        max-width: 95%;
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+
+    /* BOTÓN ABRIR */
+
+    #botonAbrir {
+        max-width: 95%;
+        padding: 10px 15px;
+        font-size: 11px;
+    }
+
+}
+
+/* =================================
+   PANTALLAS MUY PEQUEÑAS
+================================= */
+
+@media screen and (max-width: 360px) {
+
+    body {
+        padding: 3px;
+    }
+
+    .boton-ubicacion {
+        padding: 5px 7px;
+        font-size: 7px;
+    }
+
+    .contador {
+        gap: 1px;
+    }
+
+    .contador-item {
+        width: 25px;
+        padding: 2px 1px;
+    }
+
+    .contador-item span {
+        font-size: 9px;
+    }
+
+    .contador-item small {
+        font-size: 5px;
+    }
+
+    #botonCerrar {
+        font-size: 10px;
+        padding: 9px 10px;
+    }
+
 }
